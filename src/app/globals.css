@@ -1,13 +1,17 @@
 :root {
-    --primary: #3972d5;
-    --secondary: #164ba6;
+    --primary: #522ed2;
+    --secondary: #432a98;
 
     --text-primary: #e2e2e2;
     --text-secondary: #898889;
+    --text-dark: #1c1c1c;
 
     --bg-primary: #0f0f0f;
     --bg-secondary: #131313;
+    --bg-dark-gray: #181818;
     --bg-gray: #898889;
+    --bg-white: #ffffff;
+
     --border-primary: #1c1c1c;
     --border-secondary: #2f2f2f;
 

@@ -1,0 +1,16 @@
+.layout{
+    display: flex;
+    align-items: flex-start;
+    height: 100%;
+    max-height: 100dvh;
+    overflow: hidden;
+}
+.main{
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    overflow: auto;
+    max-height: 100%;
+}

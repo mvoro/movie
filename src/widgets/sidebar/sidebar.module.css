@@ -1,0 +1,140 @@
+.sidebar {
+    position: relative;
+    width: 84px;
+    height: 100dvh;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-primary);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.sidebar.toggled {
+    width: 224px;
+}
+
+/* Toggle Button */
+.toggleBtn {
+    position: absolute;
+    right: 0;
+    top: 1.75rem;
+    width: 16px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    background: var(--bg-secondary);
+    border-radius: 0.25rem 0 0 0.25rem ;
+    border: 1px solid var(--border-primary);
+    transition: var(--transition);
+}
+.toggleBtn:hover{
+    background: var(--bg-primary);
+}
+.toggleBtn > svg{
+    rotate: 180deg;
+    width: 6px;
+    transition: var(--transition);
+}
+.toggleBtn.toggled > svg{
+    rotate: 0deg;
+}
+.toggleBtn > svg > path{
+    transition: var(--transition);
+}
+.toggleBtn:hover > svg > path{
+    stroke: var(--bg-white);
+}
+
+
+/* Navigation and Footer Links */
+.sidebar > nav,
+.sidebar > footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar > nav {
+    margin-top: 2rem;
+}
+
+.sidebar > nav > a,
+.sidebar > footer > a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    transition: var(--transition);
+}
+
+.sidebar > nav > a > span,
+.sidebar > footer > a > span {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    display: none;
+    opacity: 0;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+/* Links Animation */
+.sidebar.toggled > nav > a > span,
+.sidebar.toggled > footer > a > span {
+    display: block;
+    opacity: 1;
+    animation: showLinks 0.25s;
+}
+
+.sidebar > nav > a:hover > span,
+.sidebar > footer > a:hover > span {
+    color: var(--text-primary);
+}
+
+.sidebar > nav > a > svg,
+.sidebar > footer > a > svg {
+    width: 20px;
+    height: 20px;
+    transition: var(--transition);
+}
+
+.sidebar > nav > a > svg > path,
+.sidebar > footer > a > svg > path {
+    transition: var(--transition);
+}
+
+.sidebar > nav > a:hover > svg > path,
+.sidebar > footer > a:hover > svg > path {
+    stroke: var(--text-primary);
+}
+
+/* Animations */
+@keyframes hideLinks {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes showLinks {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer */
+.sidebar > footer {
+    margin-top: auto;
+}
