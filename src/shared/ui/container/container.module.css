@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    max-width: 1296px;
+    margin: 0 auto;
+    transition: var(--transition);
+}
+@media (width <= 1392px) {
+    .container {
+        max-width: 100%;
+        padding: 0 6rem;
+    }
+}
+@media (width <= 768px) {
+    .container {
+        padding: 0 4rem;
+    }
+}
+@media (width <= 448px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+@media (width <= 324px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
