@@ -6,4 +6,5 @@ export interface ButtonProps
     children: React.ReactNode;
     variant?: 'outlined' | 'contained';
     color?: 'primary' | 'dark' | 'light';
+    size?: 'small' | 'medium' | 'large';
 }

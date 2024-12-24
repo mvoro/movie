@@ -6,9 +6,10 @@ const Button = (props: ButtonProps) => {
         children,
         variant = 'contained',
         color = 'primary',
+        size = 'medium',
         ...rest
     } = props;
-    const className = `${styles.button} ${styles[variant]} ${styles[color]} ${rest.className}`;
+    const className = `${styles.button} ${styles[variant]} ${styles[color]} ${styles[size]} ${rest.className}`;
     return (
         <button className={className} {...rest}>
             {children}

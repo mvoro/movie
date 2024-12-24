@@ -1,9 +1,6 @@
 .button{
     border-radius: var(--border-radius);
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0 1.5rem;
-    height: 2.5rem;
+    font-weight: 600;
 
     display: flex;
     align-items: center;
@@ -11,6 +8,21 @@
 
     transition: var(--transition);
     cursor: pointer;
+}
+.button.small{
+    font-size: 12px;
+    padding: 0 1rem;
+    height: 2rem;
+}
+.button.medium{
+    font-size: 16px;
+    padding: 0 1.5rem;
+    height: 2.5rem;
+}
+.button.large{
+    font-size: 18px;
+    padding: 0 2rem;
+    height: 3rem;
 }
 /*contained*/
 .button.contained{

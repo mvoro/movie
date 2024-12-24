@@ -5,18 +5,21 @@
     background: var(--bg-dark-gray);
     border-radius: var(--border-radius);
     display: flex;
-    align-items: center;
-}
-
-.content{
-    display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 1.5rem;
 }
-.content > h2{
-    font-size: 2rem;
+
+.wrapper > h2{
+    font-size: 32px;
     max-width: 60%;
-    font-weight: 600;
+    font-weight: 500;
+}
+.wrapper > footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .actions{
     display: flex;
