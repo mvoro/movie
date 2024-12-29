@@ -24,6 +24,35 @@
     padding: 0 2rem;
     height: 3rem;
 }
+/*text*/
+.button.text{
+    background: inherit;
+    border: none;
+    color: var(--text-primary);
+}
+/*primary*/
+.button.text.primary{
+    color: var(--primary);
+}
+.button.text.primary:hover{
+    color: var(--secondary);
+}
+/*dark*/
+.button.text.dark{
+    color: var(--border-secondary);
+}
+.button.text.dark:hover{
+    color: var(--border-primary);
+}
+/*light*/
+.button.text.light{
+    color: var(--bg-white);
+}
+.button.text.light:hover{
+    color: var(--bg-gray);
+}
+
+
 /*contained*/
 .button.contained{
     border: none;

@@ -10,9 +10,9 @@ export const movieApi = createApi({
             query: (page) => ({
                 params: {
                     page,
-                    language: process.env.LANGUAGE_RESPONSE,
+                    language: process.env.NEXT_PUBLIC_LANGUAGE_RESPONSE,
                 },
-                url: '',
+                url: '/movie/now_playing',
             }),
         }),
     }),

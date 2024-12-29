@@ -3,7 +3,7 @@ import styles from './movie.module.css';
 import { MovieType } from './model/types';
 import { Rating } from '@/entities/movie/ui/rating';
 import { useMouseMoveDebounce } from '@/shared/helpers/hooks/useMouseMoveDebounce';
-import { IMAGE_PATH_W500 } from '@/shared/constants/tmdb/imagesLinks';
+import { useMovieCardImage } from './helpers/useMovieCardImage';
 
 type MovieProps = MovieType & { handleNavigate: () => void } & {
     addFavourite: React.ReactNode;
@@ -22,10 +22,12 @@ const Movie = (props: MovieProps) => {
     const [isMouseMoving, handleMouseMove, handleMouseLeave] =
         useMouseMoveDebounce(500);
 
+    const cardImagePath = useMovieCardImage(poster_path);
+
     return (
         <div
             onClick={handleNavigate}
-            style={{ backgroundImage: `url(${IMAGE_PATH_W500 + poster_path})` }}
+            style={{ backgroundImage: `url(${cardImagePath})` }}
             onMouseMove={handleMouseLeave}
             onMouseLeave={handleMouseMove}
             className={`${styles.movie} ${isMouseMoving ? styles.move : ''}`}

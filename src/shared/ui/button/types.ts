@@ -4,7 +4,7 @@ export interface ButtonProps
         HTMLButtonElement
     > {
     children: React.ReactNode;
-    variant?: 'outlined' | 'contained';
+    variant?: 'outlined' | 'contained' | 'text';
     color?: 'primary' | 'dark' | 'light';
     size?: 'small' | 'medium' | 'large';
 }

@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic';
 import { MovieType } from '@/entities/movie';
 import styles from './page.module.css';
 import MovieCard from '@/widgets/movie-card';
+import NowPlayingMovies from '@/widgets/now-playing-movies';
 
 const RecommendationBanner = dynamic(
     () => import('@/widgets/recommendation-banner'),
@@ -29,13 +30,7 @@ const Home = () => {
     return (
         <div>
             <RecommendationBanner />
-            <div className={styles.movies}>
-                <MovieCard {...mockMovie} />
-                <MovieCard {...mockMovie} />
-                <MovieCard {...mockMovie} />
-                <MovieCard {...mockMovie} />
-                <MovieCard {...mockMovie} />
-            </div>
+            <NowPlayingMovies />
         </div>
     );
 };

@@ -1,11 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { StateSchema } from './types/stateSchema';
 import { layoutSliceReducer } from './slices/layoutSlice';
+import { movieApi } from '@/entities/movie/model/api/list/movieApi';
 
-export const store = configureStore<StateSchema>({
+export const store = configureStore({
     reducer: {
         layout: layoutSliceReducer,
+        [movieApi.reducerPath]: movieApi.reducer,
     },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(movieApi.middleware),
 });
 
 // public api

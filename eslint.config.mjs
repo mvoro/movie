@@ -4,7 +4,7 @@ import { FlatCompat } from '@eslint/eslintrc';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-const eslintPluginPrettierRecommended = require('eslint-plugin-prettier/recommended');
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 const compat = new FlatCompat({
     baseDirectory: __dirname,

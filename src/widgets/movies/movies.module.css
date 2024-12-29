@@ -1,0 +1,18 @@
+.movies.loader{
+    min-height: 424px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.movies{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+@media(width <= 1440px){
+    .movies{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
