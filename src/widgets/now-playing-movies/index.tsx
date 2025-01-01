@@ -18,6 +18,8 @@ const NowPlayingMovies = ({ isInsideNowPlaying = false }: PropsType) => {
         isError,
     } = useGetNowPlayingMovieQuery(1);
 
+    // first january 2025
+
     const movies = isInsideNowPlaying
         ? nowPlayingData?.results
         : nowPlayingData?.results.slice(0, 5);
