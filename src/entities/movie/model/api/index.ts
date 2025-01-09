@@ -1,3 +1,7 @@
 import { movieApi } from './list/movieApi';
 
-export const { useGetNowPlayingMovieQuery } = movieApi;
+export const {
+    useGetNowPlayingMovieQuery,
+    useGetPopularMovieQuery,
+    useGetTopRatedMovieQuery,
+} = movieApi;

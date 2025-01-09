@@ -1,9 +1,10 @@
-.movie{
+.movie {
     position: relative;
     width: 100%;
     border-radius: var(--border-radius);
     padding: 1.5rem;
     min-height: 424px;
+    min-width: 292px;
 
     display: flex;
     flex-direction: column;
@@ -18,7 +19,7 @@
 }
 
 /*header*/
-.movie > header{
+.movie > header {
     z-index: 5;
     display: flex;
     align-items: flex-start;
@@ -28,22 +29,21 @@
 /*generals*/
 .movie > header,
 .movie > main,
-.movie > footer{
+.movie > footer {
     opacity: 0;
     transition: var(--transition);
 }
 .movie.move > header,
 .movie.move > main,
-.movie.move > footer{
+.movie.move > footer {
     opacity: 1;
 }
 
-
 /*main*/
-.movie > main{
+.movie > main {
     margin-top: auto;
 }
-.movie > main > .bg{
+.movie > main > .bg {
     width: 100%;
     height: 100%;
     border-radius: var(--border-radius);
@@ -58,11 +58,11 @@
     flex-direction: column;
     gap: 0.25rem;
 }
-.text > h3{
+.text > h3 {
     font-size: 24px;
     z-index: 5;
 }
-.text > p{
+.text > p {
     font-size: 14px;
     z-index: 5;
 
@@ -72,8 +72,7 @@
     overflow: hidden;
 }
 
-
 /*footer*/
-.movie > footer{
+.movie > footer {
     z-index: 5;
 }

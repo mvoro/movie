@@ -1,17 +1,17 @@
-.button{
+.button {
     background: none;
     border: none;
     outline: none;
     cursor: pointer;
 }
-.button > svg{
+.button > svg {
     width: 28px;
     height: 28px;
 }
-.button > svg > path{
+.button > svg > path {
     fill: rgb(88, 69, 214, 0.05);
     transition: var(--transition);
 }
-.button > svg:hover > path{
+.button > svg:hover > path {
     fill: var(--bg-white);
 }

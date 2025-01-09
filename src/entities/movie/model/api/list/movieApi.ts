@@ -15,5 +15,23 @@ export const movieApi = createApi({
                 url: '/movie/now_playing',
             }),
         }),
+        getPopularMovie: build.query<ResponseMovieApi, number>({
+            query: (page) => ({
+                params: {
+                    page,
+                    language: process.env.NEXT_PUBLIC_LANGUAGE_RESPONSE,
+                },
+                url: '/movie/popular',
+            }),
+        }),
+        getTopRatedMovie: build.query<ResponseMovieApi, number>({
+            query: (page) => ({
+                params: {
+                    page,
+                    language: process.env.NEXT_PUBLIC_LANGUAGE_RESPONSE,
+                },
+                url: '/movie/top_rated',
+            }),
+        }),
     }),
 });

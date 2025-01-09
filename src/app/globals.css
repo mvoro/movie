@@ -52,6 +52,20 @@ a {
     font-family: var(--font-nunito-sans), sans-serif;
 }
 
-button{
+button {
     font-family: var(--font-nunito-sans), sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark-gray); /* цвет зоны отслеживания */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--border-secondary); /* цвет бегунка */
+    border-radius: 20px; /* округлось бегунка */
 }

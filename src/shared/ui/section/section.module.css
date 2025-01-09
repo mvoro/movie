@@ -1,29 +1,29 @@
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.wrapper > h2{
+.wrapper > h2 {
     font-size: 24px;
     font-weight: 500;
 }
-.linkShowMore{
+.linkShowMore {
     width: fit-content;
     align-self: flex-end;
 }
-.linkShowMore > button{
+.linkShowMore > button {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0 !important;
 }
-.linkShowMore > button > svg{
-    margin-top: 0.10rem;
+.linkShowMore > button > svg {
+    margin-top: 0.1rem;
     rotate: 180deg;
     width: 10px;
     height: 10px;
     transition: var(--transition);
 }
-.linkShowMore > button > svg > path{
+.linkShowMore > button > svg > path {
     stroke: var(--bg-white);
 }

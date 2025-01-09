@@ -1,31 +1,31 @@
 'use client';
-import { useGetNowPlayingMovieQuery } from '@/entities/movie/model/api';
 import Movies from '@/widgets/movies';
 import { ELinks } from '@/shared/constants/links';
 import { Section } from '@/shared/ui/section';
+import { useGetPopularMovieQuery } from '@/entities/movie/model/api';
+
+const POPULAR_PATH = ELinks.CATEGORIES + '/now_playing';
 
 type PropsType = {
     isInsidePage?: boolean;
 };
 
-const NOW_PLAYING_PATH = ELinks.CATEGORIES + '/now_playing';
-
-const NowPlayingMovies = ({ isInsidePage = false }: PropsType) => {
+const PopularMovies = ({ isInsidePage = false }: PropsType) => {
     const {
-        data: nowPlayingData,
+        data: popularMovies,
         isLoading,
         isError,
-    } = useGetNowPlayingMovieQuery(1);
+    } = useGetPopularMovieQuery(1);
 
     return (
         <Section
             isInsidePage={isInsidePage}
             pagination={'pagination'}
-            showMorePath={NOW_PLAYING_PATH}
+            showMorePath={POPULAR_PATH}
         >
-            <h2>Сейчас в прокате</h2>
+            <h2>Популярное сегодня</h2>
             <Movies
-                movies={nowPlayingData?.results}
+                movies={popularMovies?.results}
                 isLoading={isLoading}
                 isInside={isInsidePage}
                 isError={isError}
@@ -33,4 +33,4 @@ const NowPlayingMovies = ({ isInsidePage = false }: PropsType) => {
         </Section>
     );
 };
-export default NowPlayingMovies;
+export default PopularMovies;

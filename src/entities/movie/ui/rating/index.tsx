@@ -11,7 +11,7 @@ export const Rating = ({
     return (
         <div className={styles.wrapper}>
             <span>
-                {vote_average} <b>/ 10</b>
+                {vote_average.toFixed(1)} <b>/ 10</b>
             </span>
             <span>{vote_count.toLocaleString()} оценок</span>
             {/*icon*/}
