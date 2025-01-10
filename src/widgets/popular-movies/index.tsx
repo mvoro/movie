@@ -1,31 +1,32 @@
-'use client';
 import Movies from '@/widgets/movies';
 import { ELinks } from '@/shared/constants/links';
 import { Section } from '@/shared/ui/section';
-import { useGetPopularMovieQuery } from '@/entities/movie/model/api';
+import { makeStore } from '@/app/store';
+import { movieApi } from '@/entities/movie/model/api/list/movieApi';
 
-const POPULAR_PATH = ELinks.CATEGORIES + '/now_playing';
+const POPULAR_CATEGORY = '/popular';
 
 type PropsType = {
     isInsidePage?: boolean;
 };
 
-const PopularMovies = ({ isInsidePage = false }: PropsType) => {
-    const {
-        data: popularMovies,
-        isLoading,
-        isError,
-    } = useGetPopularMovieQuery(1);
+const PopularMovies = async ({ isInsidePage = false }: PropsType) => {
+    const store = await makeStore();
+    const responseData = await store.dispatch(
+        movieApi.endpoints.getPopularMovie.initiate(1),
+    );
+    const { data, isError, isLoading } = responseData;
 
     return (
         <Section
             isInsidePage={isInsidePage}
             pagination={'pagination'}
-            showMorePath={POPULAR_PATH}
+            showMorePath={ELinks.CATEGORIES + POPULAR_CATEGORY}
         >
             <h2>Популярное сегодня</h2>
             <Movies
-                movies={popularMovies?.results}
+                category={POPULAR_CATEGORY}
+                movies={data?.results}
                 isLoading={isLoading}
                 isInside={isInsidePage}
                 isError={isError}

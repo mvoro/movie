@@ -48,5 +48,5 @@ const Movie = (props: MovieProps) => {
 };
 export default Movie;
 
-export type { MovieType } from './model/types';
+export type { MovieType, MovieMoreInfoType } from './model/types';
 export { MovieLoader } from './ui/movie-loader';

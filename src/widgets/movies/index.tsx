@@ -5,6 +5,7 @@ import MovieCard from '@/widgets/movie-card';
 type PropsType = {
     movies: MovieType[] | undefined;
     isLoading: boolean;
+    category: string;
     isError: boolean;
     isInside?: boolean;
 };
@@ -13,6 +14,7 @@ const Movies = ({
     movies,
     isLoading,
     isError,
+    category,
     isInside = false,
 }: PropsType) => {
     const replacedMoviesData = isInside ? movies : movies?.slice(0, 5);
@@ -24,7 +26,7 @@ const Movies = ({
     if (isLoading) {
         return movieContainer(
             <>
-                {[...new Array(4)].map((_, idx) => (
+                {[...new Array(5)].map((_, idx) => (
                     <MovieLoader key={idx} />
                 ))}
             </>,
@@ -37,7 +39,7 @@ const Movies = ({
     return movieContainer(
         <>
             {replacedMoviesData?.map((movie) => (
-                <MovieCard key={movie.id} {...movie} />
+                <MovieCard category={category} key={movie.id} {...movie} />
             ))}
         </>,
     );

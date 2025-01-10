@@ -1,6 +1,7 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { baseQuery } from '@/app/api/helpers/fetchBaseQuery';
 import { ResponseMovieApi } from '@/entities/movie/model/types/movieApiTypes';
+import { MovieMoreInfoType } from '@/entities/movie';
 
 export const movieApi = createApi({
     reducerPath: 'movieApi',
@@ -31,6 +32,14 @@ export const movieApi = createApi({
                     language: process.env.NEXT_PUBLIC_LANGUAGE_RESPONSE,
                 },
                 url: '/movie/top_rated',
+            }),
+        }),
+        getInfoMovie: build.query<MovieMoreInfoType, number>({
+            query: (movieId) => ({
+                params: {
+                    language: process.env.NEXT_PUBLIC_LANGUAGE_RESPONSE,
+                },
+                url: `/movie/${movieId}`,
             }),
         }),
     }),

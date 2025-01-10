@@ -4,4 +4,5 @@ export const {
     useGetNowPlayingMovieQuery,
     useGetPopularMovieQuery,
     useGetTopRatedMovieQuery,
+    useGetInfoMovieQuery,
 } = movieApi;
