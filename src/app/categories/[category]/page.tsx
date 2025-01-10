@@ -1,6 +1,6 @@
-import NowPlayingMovies from '@/widgets/now-playing-movies';
+import NowPlayingMovies from '@/widgets/categories/now-playing-movies';
 
 const Category = ({ params }: { params: { category: string } }) => {
-    return <NowPlayingMovies isInsideNowPlaying={true} />;
+    return <NowPlayingMovies isInsidePage={true} />;
 };
 export default Category;
