@@ -10,6 +10,7 @@ type Props = {
     showMorePath?: string;
     pagination?: React.ReactNode;
     className?: string;
+    zIndex?: boolean;
 };
 
 export const Section = ({
@@ -19,9 +20,12 @@ export const Section = ({
     isInsidePage,
     pagination,
     className,
+    zIndex = false,
 }: Props) => {
     return (
-        <section className={`${styles.wrapper} ${className ? className : ''}`}>
+        <section
+            className={`${styles.wrapper} ${zIndex ? styles.zIndex : ''} ${className ? className : ''}`}
+        >
             {title && <h2>title</h2>}
             {children}
             {pagination && isInsidePage ? (

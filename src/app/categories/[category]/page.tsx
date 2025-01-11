@@ -1,6 +1,7 @@
 import NowPlayingMovies from '@/widgets/categories/now-playing-movies';
 
-const Category = ({ params }: { params: { category: string } }) => {
+const Category = async ({ params }: { params: { category: string } }) => {
+    console.log(params);
     return <NowPlayingMovies isInsidePage={true} />;
 };
 export default Category;

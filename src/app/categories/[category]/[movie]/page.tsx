@@ -1,30 +1,53 @@
 'use client';
 import { useParams } from 'next/navigation';
 import { useGetInfoMovieQuery } from '@/entities/movie/model/api';
-import { AboutMovie } from './ui/about-movie';
 import { IMAGE_PATH_W500 } from '@/shared/constants/tmdb/imagesLinks';
 import styles from './page.module.css';
-import { Media } from './ui/media';
+import { MoreInfoSkeleton } from '@/widgets/more-info-movie';
+import { MovieMediaSkeleton } from '@/features/movie-media';
+import dynamic from 'next/dynamic';
+import { MovieRatingSkeleton } from '@/features/movie-rating';
+
+const MovieMedia = dynamic(() => import('@/features/movie-media'), {
+    ssr: false,
+    loading: () => <MovieMediaSkeleton />,
+});
+const MoreInfoMovie = dynamic(() => import('@/widgets/more-info-movie'), {
+    ssr: false,
+    loading: () => <MoreInfoSkeleton />,
+});
+const MovieRating = dynamic(() => import('@/features/movie-rating'), {
+    ssr: false,
+    loading: () => <MovieRatingSkeleton />,
+});
 
 const MoviePage = () => {
-    const { movie, category } = useParams();
+    const { movie } = useParams();
     const { data, isLoading, isError } = useGetInfoMovieQuery(Number(movie));
 
-    console.log(data);
-
-    if (!data) return null;
+    const isFetchingData = isLoading || isError;
 
     return (
         <div className={styles.wrapper}>
             <div
                 className={styles.img}
                 style={{
-                    backgroundImage: `linear-gradient(to top, var(--bg-primary) 25%, transparent 100%), url(${IMAGE_PATH_W500 + data.backdrop_path})`,
+                    backgroundImage: `linear-gradient(to top, var(--bg-primary) 10%, transparent 100%), url(${IMAGE_PATH_W500 + data?.backdrop_path})`,
                 }}
             />
             <div className={styles.content}>
-                <Media {...data} />
-                <AboutMovie {...data} />
+                <MovieMedia
+                    poster_path={data?.poster_path}
+                    video={data?.video}
+                    isFetchingData={isFetchingData}
+                />
+                <MoreInfoMovie data={data} isFetchingData={isFetchingData} />
+                <MovieRating
+                    movieId={data?.id}
+                    vote_average={data?.vote_average}
+                    isFetchingData={isFetchingData}
+                    vote_count={data?.vote_count}
+                />
             </div>
         </div>
     );

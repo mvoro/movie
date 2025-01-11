@@ -1,6 +1,5 @@
 .wrapper{
     position: relative;
-    min-height: calc(100vh - 4rem);
 }
 .wrapper > .img{
     width: calc(100% + 4rem);
@@ -8,14 +7,15 @@
     position: absolute;
     z-index: 0;
     top: -2rem;
-    opacity: 0.5;
+    opacity: 0.15;
     background-repeat: no-repeat;
     background-size: cover;
     left: -2rem;
 }
 
 .content{
+    margin-top: 3.5rem;
     display: grid;
-    grid-template-columns: 0.5fr 2fr 0.5fr;
+    grid-template-columns: 1.25fr 2fr 0.5fr;
     gap: 2rem;
 }

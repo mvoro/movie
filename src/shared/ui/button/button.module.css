@@ -9,6 +9,11 @@
     transition: var(--transition);
     cursor: pointer;
 }
+.button:disabled{
+    opacity: 0.25;
+}
+
+
 .button.small {
     font-size: 12px;
     padding: 0 1rem;
@@ -108,4 +113,10 @@
 .button.outlined.light:hover {
     border-color: var(--bg-gray);
     color: var(--text-secondary);
+}
+.button.outlined.light > svg > path{
+    transition: var(--transition);
+}
+.button.outlined.light:hover > svg > path{
+    stroke: var(--bg-gray);
 }

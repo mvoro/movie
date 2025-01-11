@@ -1,0 +1,20 @@
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.stats > span {
+    font-size: 16px;
+    color: var(--text-primary);
+    white-space: nowrap;
+}
+.stats > span:first-child {
+    font-size: 32px;
+    font-weight: 800;
+}
+.stats > span:first-child > b {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
