@@ -15,6 +15,7 @@ export type MovieType = {
     vote_count: number;
 };
 
+// movie
 export interface MovieMoreInfoType extends Omit<MovieType, 'genre_ids'> {
     belongs_to_collection: BelongsToCollection | null;
     budget: number;

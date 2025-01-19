@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 1rem;
 }
-.zIndex{
+.zIndex {
     z-index: 5;
 }
 .wrapper > h2 {

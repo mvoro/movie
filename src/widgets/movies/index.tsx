@@ -8,6 +8,7 @@ type PropsType = {
     category: string;
     isError: boolean;
     isInside?: boolean;
+    className?: string;
 };
 
 const Movies = ({
@@ -16,11 +17,14 @@ const Movies = ({
     isError,
     category,
     isInside = false,
+    className,
 }: PropsType) => {
     const replacedMoviesData = isInside ? movies : movies?.slice(0, 5);
 
     const movieContainer = (children: React.ReactNode) => (
-        <div className={styles.movies}>{children}</div>
+        <div className={`${styles.movies} ${className ? className : ''}`}>
+            {children}
+        </div>
     );
 
     if (isLoading) {

@@ -1,7 +1,7 @@
-.wrapper{
+.wrapper {
     position: relative;
 }
-.wrapper > .img{
+.wrapper > .img {
     width: calc(100% + 4rem);
     height: 400px;
     position: absolute;
@@ -13,7 +13,7 @@
     left: -2rem;
 }
 
-.content{
+.content {
     margin-top: 3.5rem;
     display: grid;
     grid-template-columns: 1.25fr 2fr 0.5fr;

@@ -4,11 +4,11 @@ import { useGetInfoMovieQuery } from '@/entities/movie/model/api';
 import { IMAGE_PATH_W500 } from '@/shared/constants/tmdb/imagesLinks';
 import styles from './page.module.css';
 import { MoreInfoSkeleton } from '@/widgets/more-info-movie';
-import { MovieMediaSkeleton } from '@/features/movie-media';
 import dynamic from 'next/dynamic';
 import { MovieRatingSkeleton } from '@/features/movie-rating';
+import { MovieMediaSkeleton } from '@/widgets/media-movie';
 
-const MovieMedia = dynamic(() => import('@/features/movie-media'), {
+const MovieMedia = dynamic(() => import('@/widgets/media-movie'), {
     ssr: false,
     loading: () => <MovieMediaSkeleton />,
 });
@@ -38,7 +38,7 @@ const MoviePage = () => {
             <div className={styles.content}>
                 <MovieMedia
                     poster_path={data?.poster_path}
-                    video={data?.video}
+                    id={data?.id || Number(movie)}
                     isFetchingData={isFetchingData}
                 />
                 <MoreInfoMovie data={data} isFetchingData={isFetchingData} />

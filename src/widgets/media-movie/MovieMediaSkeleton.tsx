@@ -5,7 +5,7 @@ export const MovieMediaSkeleton = () => {
     return (
         <Section>
             <Skeleton style={{ minHeight: '748px' }} />
-            <Skeleton style={{ height: '192px' }} />
+            <Skeleton style={{ height: '248px' }} />
         </Section>
     );
 };
