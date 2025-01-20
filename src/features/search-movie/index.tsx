@@ -14,14 +14,21 @@ type Props = {
 const SearchMovie = ({ setSearchedMovies, setLoading }: Props) => {
     const [value, setValue] = useState<string>('');
     const [focused, setFocused] = useState<boolean>(false);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const debouncedValue = useDebounce(value, 300);
 
     useEffect(() => {
         // query
-
-        setSearchedMovies(['232']);
-        console.log(debouncedValue);
+        if (debouncedValue.length) {
+            setIsLoading(true);
+        }
     }, [debouncedValue]);
+
+    useEffect(() => {
+        if (isLoading) {
+            setSearchedMovies(['232']);
+        }
+    }, [isLoading, setSearchedMovies]);
 
     return (
         <div className={`${styles.wrapper} ${focused ? styles.focused : ''}`}>
