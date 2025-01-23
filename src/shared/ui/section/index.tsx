@@ -26,7 +26,7 @@ export const Section = ({
         <section
             className={`${styles.wrapper} ${zIndex ? styles.zIndex : ''} ${className ? className : ''}`}
         >
-            {title && <h2>title</h2>}
+            {title && <h2>{title}</h2>}
             {children}
             {pagination && isInsidePage ? (
                 pagination

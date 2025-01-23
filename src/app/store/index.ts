@@ -12,5 +12,5 @@ export const makeStore = () =>
             getDefaultMiddleware().concat(movieApi.middleware),
     });
 
-// public api
+// public endpoints
 export { useAppSelector, useAppDispatch } from './helpers/hooks';

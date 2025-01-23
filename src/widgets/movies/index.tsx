@@ -8,6 +8,7 @@ type PropsType = {
     category: string;
     isError: boolean;
     isInside?: boolean;
+    isSwiper?: boolean;
     className?: string;
 };
 
@@ -17,6 +18,7 @@ const Movies = ({
     isError,
     category,
     isInside = false,
+    isSwiper = false,
     className,
 }: PropsType) => {
     const replacedMoviesData = isInside ? movies : movies?.slice(0, 5);
@@ -39,6 +41,8 @@ const Movies = ({
     if (isError) {
         return movieContainer(<h5>Ошибка загрузки фильмов</h5>);
     }
+
+    // TODO: Обработать isSwiper
 
     return movieContainer(
         <>

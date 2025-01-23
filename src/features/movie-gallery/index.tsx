@@ -17,10 +17,11 @@ type Props = {
 };
 
 const MovieGallery = ({ id }: Props) => {
-    const { data: imagesData } = useGetImagesMovieQuery(id);
+    const { data: imagesData, isLoading } = useGetImagesMovieQuery(id);
 
-    if (!imagesData?.posters.length)
-        return <Skeleton style={{ height: '248px' }} />;
+    if (isLoading) return <Skeleton style={{ height: '248px' }} />;
+
+    if (!imagesData?.posters.length) return null;
 
     return (
         <div className={styles.container}>

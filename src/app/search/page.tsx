@@ -5,12 +5,11 @@ import SearchMovie from '@/features/search-movie';
 import Movies from '@/widgets/movies';
 import { useState } from 'react';
 import { MovieType } from '@/entities/movie';
+
 const Search = () => {
     const [movies, setMovies] = useState<MovieType[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<boolean>(true);
-
-    console.log(movies);
+    const [error, setError] = useState<boolean>(false);
 
     return (
         <div className={styles.page}>
@@ -26,7 +25,7 @@ const Search = () => {
                 className={`${styles.movies} ${movies.length > 0 ? styles.found : ''}`}
                 movies={movies}
                 isLoading={loading}
-                category={''}
+                category={'searched'}
                 isError={error}
                 isInside={false}
             />

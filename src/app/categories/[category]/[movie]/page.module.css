@@ -17,5 +17,5 @@
     margin-top: 3.5rem;
     display: grid;
     grid-template-columns: 1.25fr 2fr 0.5fr;
-    gap: 2rem;
+    gap: 6rem 2rem;
 }

@@ -32,6 +32,7 @@ const Sidebar = () => {
             <nav>
                 {links.map((link, idx) => {
                     if (link.href === ELinks.MOVIE) {
+                        // TODO: Случайный фильм
                         return (
                             <Link href={''} key={idx}>
                                 {link.icon}

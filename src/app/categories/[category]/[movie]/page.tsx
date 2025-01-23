@@ -7,6 +7,8 @@ import { MoreInfoSkeleton } from '@/widgets/more-info-movie';
 import dynamic from 'next/dynamic';
 import { MovieRatingSkeleton } from '@/features/movie-rating';
 import { MovieMediaSkeleton } from '@/widgets/media-movie';
+import { RecommendationMoviesSkeleton } from '@/widgets/recommendations-movies';
+import { SimilarMoviesSkeleton } from '@/widgets/similar-movies';
 
 const MovieMedia = dynamic(() => import('@/widgets/media-movie'), {
     ssr: false,
@@ -20,9 +22,20 @@ const MovieRating = dynamic(() => import('@/features/movie-rating'), {
     ssr: false,
     loading: () => <MovieRatingSkeleton />,
 });
+const RecommendationsMovies = dynamic(
+    () => import('@/widgets/recommendations-movies'),
+    {
+        ssr: false,
+        loading: () => <RecommendationMoviesSkeleton />,
+    },
+);
+const SimilarMovies = dynamic(() => import('@/widgets/similar-movies'), {
+    ssr: false,
+    loading: () => <SimilarMoviesSkeleton />,
+});
 
 const MoviePage = () => {
-    const { movie } = useParams();
+    const { movie, category } = useParams();
     const { data, isLoading, isError } = useGetInfoMovieQuery(Number(movie));
 
     const isFetchingData = isLoading || isError;
@@ -47,6 +60,14 @@ const MoviePage = () => {
                     vote_average={data?.vote_average}
                     isFetchingData={isFetchingData}
                     vote_count={data?.vote_count}
+                />
+                <SimilarMovies
+                    movieId={data?.id || Number(movie)}
+                    category={(category as string) || 'search'}
+                />
+                <RecommendationsMovies
+                    movieId={data?.id || Number(movie)}
+                    category={(category as string) || 'search'}
                 />
             </div>
         </div>
