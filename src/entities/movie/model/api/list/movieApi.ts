@@ -6,7 +6,7 @@ import { MovieImagesType } from '@/features/movie-gallery/types';
 
 export const movieApi = createApi({
     reducerPath: 'movieApi',
-    baseQuery: baseQuery(),
+    baseQuery: baseQuery,
     endpoints: (build) => ({
         getNowPlayingMovie: build.query<ResponseMovieApi, number>({
             query: (page) => ({

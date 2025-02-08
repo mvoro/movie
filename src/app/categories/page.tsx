@@ -1,4 +1,6 @@
+import Genres from '@/widgets/genres';
+
 const Categories = () => {
-    return <div>categories page</div>;
+    return <Genres />;
 };
 export default Categories;
